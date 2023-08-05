@@ -1,0 +1,142 @@
+.mainPage{
+    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+}
+
+.leftbox {
+    background-color: rgba(249, 246, 244,0.8);
+    position: absolute;
+    left: 3vw;
+    top: 3vw;
+    width: 35vw;
+    height: 37vw;
+    overflow-y: scroll;
+    border-radius:1vw ;
+}
+
+.rightbox {
+    background-color: rgba(246, 249, 250,0.8);
+    position: absolute;
+    left: 42vw;
+    top: 3vw;
+    width: 35vw;
+    height: 37vw;
+    overflow-y: scroll;
+    border-radius:1vw ;
+}
+
+.leftbox::-webkit-scrollbar{
+    width: 0;
+}
+
+.rightbox::-webkit-scrollbar{
+    width: 0;
+}
+
+.input {
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 1.6vw;
+    height: 4vw;
+    width: 24vw;
+    border-radius: 1vw;
+    border: 1px solid #c8cccf;
+    color: #6a6f77;
+    outline: 0;
+    text-decoration: none;
+    position: absolute;
+    left:3.3vw;
+}
+
+#condition{
+    top:5vw;
+}
+
+#symptom{
+    top:11vw;
+}
+
+#treatment{
+    top:17vw;
+}
+
+.hint{
+    background-color: #c8cccf;
+    border-radius: 1vw;
+    height:2vw;
+    width:2vw;
+    font-size: 1.3vw;
+    text-align: center;
+    line-height: 2vw;
+    position: absolute;
+    user-select: none;
+}
+
+#hint1{
+    top:6vw;
+    left:28vw;
+}
+
+#hint2{
+    top:12vw;
+    left:28vw;
+}
+
+#hint3{
+    top:18vw;
+    left:28vw;
+}
+
+.info{
+    position: absolute;
+    width: 30vw;
+    height:10vw;
+    background-color: rgb(249, 246, 239);
+    /* border: 1px solid black; */
+    border-radius: 2vw;
+    box-shadow: 2px 2px black;
+    display: none;
+    font-size: 1.3vw;
+    color:#919397;
+    padding:0.4vw 0.8vw;
+}
+
+#info1{
+    top:5vw;
+    left:34vw;
+}
+
+#info2{
+    top:11vw;
+    left:34vw;
+}
+
+#info3{
+    top:17vw;
+    left:34vw;
+}
+
+#dataSubmit{
+    position: absolute;
+    bottom:4vw;
+    left:11vw;
+    width: 10vw;
+    height:4vw;
+    font-size: 2vw;
+    border-radius: 1vw;
+    opacity: 0.7;
+    border-width: 0.5px;
+}
+
+
+input[type="text"]:focus {
+    border: 0.1vw solid #ff7496;
+}
+
+#dataresult {
+    color:black;
+    text-shadow: 0.15vw 0.15vw violet;
+    font-size: 2vw;
+    position: absolute;
+    top: 3vw;
+    left:4vw;
+}

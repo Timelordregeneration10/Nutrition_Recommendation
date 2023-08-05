@@ -1,0 +1,120 @@
+
+.iconfont {
+    font-size: 1.8vw !important;
+    color: #fff;
+    line-height: 3.25vw;
+    text-align: center;
+}
+
+.menu-box {
+    position:absolute;
+    top:12vw;
+    left:9vw;
+    width: 4vw;
+    height: 26vw;
+    background-color: #22243a;
+    border-radius: 2vw;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, .3);
+    /* 添加过渡 */
+    transition: all .2s ease-out;
+    overflow: hidden;
+}
+
+
+.menu-box:hover {
+    width: 8vw;
+    height:37vw;
+    line-height: 6vw;
+    border-radius: 4vw;
+    transform: translate(-2vw,-5vw);
+}
+
+/* hover时让文字出现 */
+.menu-box:hover>ul>li p {
+    display: block;
+}
+
+/* 表情盒子 */
+.emotion-box {
+    width: 100%;
+    text-align: center;
+    margin: 0.65vw auto;
+}
+
+#emotion1,
+#emotion2 {
+    color: #fff;
+    font-size: 2.1vw !important;
+    animation: jitter .3s linear forwards;
+}
+
+#emotion2 {
+    display: none;
+}
+
+.menu-box:hover #emotion1 {
+    display: none;
+}
+
+.menu-box:hover #emotion2 {
+    display: block;
+}
+
+ul {
+    width: 100%;
+    height: 75%;
+}
+
+li {
+    list-style: none;
+}
+
+li>a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+    text-decoration: none;
+    /* 禁止用户选中 */
+    user-select: none;
+}
+
+li:hover {
+    background-color: #343850;
+    cursor: pointer;
+}
+
+li:hover .content,
+li:hover i {
+    color: #fff;
+}
+
+li:hover i {
+    animation: jitter .3s linear forwards;
+}
+
+.content {
+    display: none;
+    padding-left: 0.33vw;
+    font-size: 1.1vw;
+    color: #fff;
+    /* 设置文字不换行 */
+    white-space: nowrap;
+    transition: all .2s ease-out;
+}
+
+/* 抖动动画 */
+@keyframes jitter {
+    0% {
+        /* 缩放1.2倍，顺时针旋转10° */
+        transform: scale(1.2) rotate(10deg);
+    }
+
+    50% {
+        transform: scale(0.8) rotate(-10deg);
+    }
+
+    0% {
+        transform: scale(1.0) rotate(0deg);
+    }
+}

@@ -1,0 +1,219 @@
+* {
+    /* 去除浏览器默认内外边距 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 去除input的轮廓 */
+input {
+    outline: none;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    /* 溢出隐藏 */
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    /* 渐变方向从左到右 */
+}
+
+
+
+@keyframes myMove {
+    0% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate(10%, -1000%);
+    }
+
+    75% {
+        transform: translate(-20%, -1200%);
+    }
+
+    99% {
+        opacity: .9;
+    }
+
+    100% {
+        transform: translateY(-1800%) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* 最外层的大盒子 */
+.box {
+    width: 68.36vw;
+    height: 39vw;
+    display: flex;
+    /* 相对定位 */
+    position: absolute;
+    z-index: 2;
+    margin: auto;
+    /* 设置圆角 */
+    border-radius: 1.17vw;
+    /* 设置边框 */
+    /* border: 1px solid rgba(255, 255, 255, .6); */
+    /* 设置盒子阴影 */
+    /* box-shadow: 2px 1px 19px rgba(0, 0, 0, .1); */
+}
+
+/* 滑动的盒子 */
+.pre-box {
+    /* 宽度为大盒子的一半 */
+    width: 50%;
+    /* width: var(--width); */
+    height: 100%;
+    /* 绝对定位 */
+    position: absolute;
+    /* 距离大盒子左侧为0 */
+    left: 0;
+    /* 距离大盒子顶部为0 */
+    top: 0;
+    z-index: 99;
+    border-radius: 1.17vw;
+    background-image: url(../image/login.jpg);
+    box-shadow: 2px 1px 19px rgba(0, 0, 0, .1);
+    /* 动画过渡，先加速再减速 */
+    transition: 0.5s ease-in-out;
+}
+
+/* 滑动盒子的标题 */
+.pre-box h1 {
+    margin-top: 9.76vw;
+    text-align: center;
+    /* 文字间距 */
+    letter-spacing: 0.326vw;
+    color: white;
+    /* 禁止选中 */
+    user-select: none;
+    /* 文字阴影 */
+    text-shadow: 4px 4px 3px rgba(0, 0, 0, .1);
+}
+
+/* 滑动盒子的文字 */
+.pre-box p {
+    height: 1.95vw;
+    line-height: 1.95vw;
+    text-align: center;
+    margin: 1.3vw 0;
+    /* 禁止选中 */
+    user-select: none;
+    font-weight: bold;
+    color: white;
+    text-shadow: 4px 4px 3px rgba(0, 0, 0, .1);
+}
+
+/* 登录和注册盒子 */
+.login-form,
+.register-form {
+    flex: 1;
+    height: 100%;
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+    border-radius: 1.17vw;
+}
+
+/* 标题盒子 */
+.title-box {
+    height: 16.27vw;
+    line-height: 19.5vw;
+}
+
+/* 标题 */
+.title-box h1 {
+    text-align: center;
+    color: white;
+    font-size: 3.26vw;
+    /* 禁止选中 */
+    user-select: none;
+    letter-spacing: 0.98vw;
+    text-shadow: 4px 4px 3px hotpink;
+
+}
+
+/* 输入框盒子 */
+.input-box {
+    display: flex;
+    /* 纵向布局 */
+    flex-direction: column;
+    /* 水平居中 */
+    align-items: center;
+}
+
+/* 输入框 */
+input {
+    width: 60%;
+    height: 2.6vw;
+    font-size: 0.98vw;
+    margin-bottom: 1.3vw;
+    text-indent: 0.65vw;
+    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5.2vw;
+    /* 增加磨砂质感 */
+    backdrop-filter: blur(0.65vw);
+}
+
+input:focus, input:hover {
+    /* 光标颜色 */
+    color: black;
+    border: 1px solid #ff7496;
+}
+
+/* 聚焦时隐藏文字 */
+input:focus::placeholder {
+    opacity: 0;
+}
+
+/* 按钮盒子 */
+.btn-box {
+    display: flex;
+    justify-content: center;
+}
+
+/* 按钮 */
+button {
+    width: 6.5vw;
+    height: 2.6vw;
+    margin: 0 0.456vw;
+    font-size: 0.98vw;
+    line-height: 1.95vw;
+    border: none;
+    border-radius: 0.26vw;
+    background-color: wheat;
+    color: white;
+}
+
+/* 按钮悬停时 */
+button:hover {
+    /* 鼠标小手 */
+    cursor: pointer;
+    /* 透明度 */
+    opacity: .8;
+    border: 1px solid #ff7496;
+}
+
+/* 按钮文字 */
+.btn-box p {
+    height: 1.95vw;
+    line-height: 2.6vw;
+    /* 禁止选中 */
+    user-select: none;
+    font-size: 0.91vw;
+    color: white;
+
+}
+
+.btn-box p:hover {
+    cursor: pointer;
+    border-bottom: 1px solid white;
+}
