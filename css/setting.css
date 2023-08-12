@@ -9,6 +9,13 @@
     user-select: none;
 }
 
+#uid{
+    position: absolute;
+    font-size: 0.8vw;
+    top: 1vw;
+    right: 1vw;
+    text-shadow: 0.2vw 0.2vw 0.1vw rgb(244, 221, 244);
+}
 
 .profilePhoto {
     border-radius: 5vw;
@@ -53,13 +60,13 @@ button {
 }
 
 #changeSign {
-    bottom: 11vw;
+    bottom: 15vw;
     left: 12vw;
     opacity: 0.8;
 }
 
 #changePassword {
-    bottom: 6.5vw;
+    bottom: 8.5vw;
     left: 12vw;
     opacity: 0.8;
 }

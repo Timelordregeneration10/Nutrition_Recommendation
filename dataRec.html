@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="image/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/iconfont.css">
     <link rel="stylesheet" href="css/background.css">
@@ -25,20 +26,25 @@
     <div class="mainPage">
         <img src="image/food1.jpg" class="backgroundImage2" alt="" />
         <div class="leftbox">
-            <input type="text" placeholder="大致情况" class="input" id="condition">
+            <input type="text" placeholder="大致情况" class="input" id="condition" maxlength="40">
             <div class="hint" id="hint1">i</div>
-            <input type="text" placeholder="具体症状" class="input" id="symptom">
+            <input type="text" placeholder="具体症状" class="input" id="symptom" maxlength="40">
             <div class="hint" id="hint2">i</div>
-            <input type="text" placeholder="治疗方案" class="input" id="treatment">
+            <input type="text" placeholder="治疗方案" class="input" id="treatment" maxlength="40">
             <div class="hint" id="hint3">i</div>
             <button id="dataSubmit">获得推荐</button>
         </div>
         <div class="rightbox">
             <div id="dataresult">输入完毕后，点击“获得推荐”，即可得到推荐结果。</div>
         </div>
-        <div class="info" id="info1">此处待补充</div>
-        <div class="info" id="info2">此处待补充</div>
-        <div class="info" id="info3">此处待补充</div>
+        <div class="info" id="info1">此处输入您的大致情况，如头痛，肚子不舒服等等。</div>
+        <div class="info" id="info2">此处输入您的具体症状，可以是专业的医院体检结果。</div>
+        <div class="info" id="info3">此处输入您得到的治疗方案，如具体摄入的药物，具体的锻炼项目等等。</div>
+        <p id="historyButton">历史</p>
+        <div class="history-box">
+            <div id="history"></div>
+            <p id="hide">收起</p>
+        </div>
     </div>
 
     <div class="menu-box">
@@ -66,9 +72,9 @@
                 </a>
             </li>
             <li>
-                <a href="more.html">
+                <a href="regionRec.html">
                     <i class="iconfont icon-fenlei"></i>
-                    <p class="content">更多功能</p>
+                    <p class="content">地区推荐</p>
                 </a>
             </li>
             <li>
@@ -79,9 +85,16 @@
             </li>
         </ul>
     </div>
+
     <div class="login-box">
         登录/注册
     </div>
+
+    <div id="load-box">
+        <p>加载中……</p>
+        <img src="image/loading.gif" alt="" id="loading" />
+    </div>
+
     <script src="js/dataRec.js"></script>
     <script src="js/login-box.js"></script>
     <script src="js/background.js"></script>

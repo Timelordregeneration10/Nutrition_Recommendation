@@ -1,0 +1,175 @@
+* {
+    /* 去除浏览器默认内外边距 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 去除input的轮廓 */
+input {
+    outline: none;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    /* 溢出隐藏 */
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    /* 渐变方向从左到右 */
+}
+
+
+
+@keyframes myMove {
+    0% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate(10%, -1000%);
+    }
+
+    75% {
+        transform: translate(-20%, -1200%);
+    }
+
+    99% {
+        opacity: .9;
+    }
+
+    100% {
+        transform: translateY(-1800%) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* 最外层的大盒子 */
+.box {
+    width: 40vw;
+    height: 30vw;
+    display: flex;
+    /* 相对定位 */
+    position: absolute;
+    z-index: 2;
+    margin: auto;
+    /* 设置圆角 */
+    border-radius: 1.17vw;
+    /* 设置边框 */
+    /* border: 1px solid rgba(255, 255, 255, .6); */
+    /* 设置盒子阴影 */
+    /* box-shadow: 2px 1px 19px rgba(0, 0, 0, .1); */
+}
+
+/* 登录和注册盒子 */
+.login-form,
+.register-form {
+    flex: 1;
+    height: 100%;
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+    border-radius: 1.17vw;
+}
+
+/* 标题盒子 */
+.title-box {
+    height: 16.27vw;
+    line-height: 19.5vw;
+}
+
+/* 标题 */
+.title-box h1 {
+    text-align: center;
+    color: white;
+    font-size: 3.26vw;
+    /* 禁止选中 */
+    user-select: none;
+    letter-spacing: 0.98vw;
+    text-shadow: 4px 4px 3px hotpink;
+
+}
+
+/* 输入框盒子 */
+.input-box {
+    display: flex;
+    /* 纵向布局 */
+    flex-direction: column;
+    /* 水平居中 */
+    align-items: center;
+    /* background-color: black; */
+    height:6vw;
+}
+
+/* 输入框 */
+input {
+    width: 60%;
+    height: 2.6vw;
+    font-size: 0.98vw;
+    margin-bottom: 1.3vw;
+    text-indent: 0.65vw;
+    border: 1px solid #fff;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5.2vw;
+    /* 增加磨砂质感 */
+    backdrop-filter: blur(0.65vw);
+}
+
+input:focus, input:hover {
+    /* 光标颜色 */
+    color: black;
+    border: 1px solid #ff7496;
+}
+
+/* 聚焦时隐藏文字 */
+input:focus::placeholder {
+    opacity: 0;
+}
+
+/* 按钮盒子 */
+.btn-box {
+    display: flex;
+    justify-content: center;
+}
+
+/* 按钮 */
+button {
+    width: 6.5vw;
+    height: 2.6vw;
+    margin: 0 0.456vw;
+    font-size: 0.98vw;
+    line-height: 1.95vw;
+    border: none;
+    border-radius: 0.26vw;
+    background-color: wheat;
+    color: white;
+}
+
+/* 按钮悬停时 */
+button:hover {
+    /* 鼠标小手 */
+    cursor: pointer;
+    /* 透明度 */
+    opacity: .8;
+    border: 1px solid #ff7496;
+}
+
+/* 按钮文字 */
+.btn-box p {
+    height: 1.95vw;
+    line-height: 2.6vw;
+    /* 禁止选中 */
+    user-select: none;
+    font-size: 0.91vw;
+    color: white;
+
+}
+
+.btn-box p:hover {
+    cursor: pointer;
+    border-bottom: 1px solid white;
+}

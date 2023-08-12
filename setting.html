@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="image/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/iconfont.css">
     <link rel="stylesheet" href="css/background.css">
@@ -25,10 +26,11 @@
     <div class="mainPage">
         <img src="image/food5.jpg" class="backgroundImage2" alt="" />
         <div class="page-box">
+            <p id="uid"></p>
             <img src="image/nothing.jpg" class="profilePhoto" alt="" />
             <p id="nickName"></p>
-            <p id="sign">这个人很勤奋，但是忘了编辑个签……</p>
-            <button id="changeName">修改用户名</button>
+            <p id="sign"></p>
+            <button id="changeName" style="display: none;">修改用户名</button>
             <button id="changeSign">编辑个签</button>
             <button id="changePassword">修改密码</button>
             <button id="logOut">退出登录</button>
@@ -61,9 +63,9 @@
                 </a>
             </li>
             <li>
-                <a href="more.html">
+                <a href="regionRec.html">
                     <i class="iconfont icon-fenlei"></i>
-                    <p class="content">更多功能</p>
+                    <p class="content">地区推荐</p>
                 </a>
             </li>
             <li>
@@ -76,6 +78,11 @@
     </div>
     <div class="login-box">
         登录/注册
+    </div>
+
+    <div id="load-box">
+        <p>加载中……</p>
+        <img src="image/loading.gif" alt="" id="loading" />
     </div>
     <script src="js/setting.js"></script>
     <script src="js/login-box.js"></script>

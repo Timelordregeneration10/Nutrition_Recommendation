@@ -12,7 +12,7 @@ window.addEventListener('load', () => {
         let index = start
 
         for (let i = 0; i < edge; i++) {
-            console.log(index);
+            // console.log(index);
             let div = document.createElement('div')
             div.style.transform = `rotateX(${(360 / edge) * i}deg) translateZ(3430px)`
             div.style.background = `url(./image/${[index]}.jpg) no-repeat`
@@ -30,7 +30,7 @@ window.addEventListener('load', () => {
 
     let start = 1 //第一张图片下标
     let end = 4 //第一组图片最后一张图片下标
-    for (let j = 0; j < sections.length; j++) {
+    for (let j = 0; j < 3; j++) {
         swiper(sections[j], start, end)
         start = start + 3 //一组图片3张
         end = end + 3

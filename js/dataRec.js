@@ -1,3 +1,10 @@
+var userSearch = location.search;
+document.getElementsByTagName("a")[0].href += userSearch;
+document.getElementsByTagName("a")[1].href += userSearch;
+document.getElementsByTagName("a")[2].href += userSearch;
+document.getElementsByTagName("a")[3].href += userSearch;
+document.getElementsByTagName("a")[4].href += userSearch;
+
 
 document.getElementById("hint1").onmouseover = function () {
     document.getElementById("info1").style = "display: block";
@@ -34,34 +41,48 @@ document.getElementById("dataSubmit").onclick = function () {
         return -1;
     }
 
+    document.getElementById("load-box").style.display = "block";
+
+    let d = new Date();
+    let sdm = String(d.getMonth() + 1);
+    if (sdm.length == 1) { sdm = "0" + sdm; }
+    let sdd = String(d.getDate() + 1);
+    if (sdd.length == 1) { sdd = "0" + sdd; }
+    let currentDate = d.getFullYear() + "-" + sdm + "-" + sdd;
+    // alert(currentDate);
+
+    let userName;
+    userName = userSearch.slice(userSearch.indexOf("=") + 1);
+
     //上传包含大致状况，具体症状，治疗方案的json
-    let dataJson = { condition: con, symptom: sym, tre: treatment };
+    let dataJson = JSON.stringify({ username: userName, conditions: con, symptoms: sym, treatments: tre, date: currentDate });
+    // alert(dataJson);
     let req = new XMLHttpRequest();
-    //改成实际地址
-    req.open("POST", "http://localhost:8080/nutrition-1.0/users/login", true);
+    let ipPortName = "http://localhost:8080/nutrition"                     //之后记得加前面的ip，port，项目名
+    let myurl = ipPortName + "/data-recommendation/foods";
+    req.open("POST", myurl, true);
     req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     req.send(dataJson);
 
     //从服务器获取数据
     req.onreadystatechange = function () {
-        if (req.readyState == 4 && req.status == 200) {
+        if (req.readyState == 4) {
             myObject = JSON.parse(req.responseText);
             //假设服务器的响应是用 JSON 格式编写的
-            result = myObject.recommendation;
-            //假设json中键为recommendation的值是我要的值
-            document.getElementById("dataResult").innerHTML = result;
+            if (myObject.code % 2 == 1) {
+                result = myObject.data;
+                document.getElementById("load-box").style.display = "none";
+                document.getElementById("dataResult").innerHTML = result;
+            }
+            else {
+                alert("推荐失败，请稍后重试！");
+                document.getElementById("load-box").style.display = "none";
+            }
         }
     }
 }
 
-var userSearch = location.search;
-document.getElementsByTagName("a")[0].href += userSearch;
-document.getElementsByTagName("a")[1].href += userSearch;
-document.getElementsByTagName("a")[2].href += userSearch;
-document.getElementsByTagName("a")[3].href += userSearch;
-document.getElementsByTagName("a")[4].href += userSearch;
-
-setTimeout(checkLogin,500);
+setTimeout(checkLogin, 500);
 
 function checkLogin() {
     if (userSearch == "") {
@@ -72,5 +93,57 @@ function checkLogin() {
         else {
             window.location.href = "index.html";
         }
+    }
+}
+
+var historyButton_Clicked = false;
+
+document.getElementById("historyButton").onclick = function () {
+    if (!historyButton_Clicked) {
+        document.getElementsByClassName("history-box")[0].style.display = "block";
+        historyButton_Clicked = true;
+
+        let userName;
+        userName = userSearch.slice(userSearch.indexOf("=") + 1);
+
+        document.getElementById("load-box").style.display = "block";
+
+        //上传包含大致状况，具体症状，治疗方案的json
+        let dataJson = JSON.stringify([userName]);
+        let req = new XMLHttpRequest();
+        let ipPortName = "http://localhost:8080/nutrition"                     //之后记得加前面的ip，port，项目名
+        let myurl = ipPortName + "/data-recommendation/history";
+        req.open("POST", myurl, true);
+        req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+        req.send(dataJson);
+
+        //从服务器获取数据
+        req.onreadystatechange = function () {
+            if (req.readyState == 4) {
+                myObject = JSON.parse(req.responseText);
+                //假设服务器的响应是用 JSON 格式编写的
+                if (myObject.code % 2 == 1) {
+                    let temp = JSON.parse(myObject.data);
+                    result = "date: " + temp.date;
+                    result += "condition: " + temp.conditions;
+                    result += ", symptom: " + temp.symptoms;
+                    result += ", treatment: " + temp.treatments;
+                    result += ", recommendation: " + temp.recommendation;
+                    document.getElementById("load-box").style.display = "none";
+                    document.getElementById("history").innerHTML = result;
+                }
+                else {
+                    alert("获取历史失败，请稍后重试！");
+                    document.getElementById("load-box").style.display = "none";
+                }
+            }
+        }
+    }
+}
+
+document.getElementById("hide").onclick = function () {
+    if (historyButton_Clicked) {
+        document.getElementsByClassName("history-box")[0].style.display = "none";
+        historyButton_Clicked = false;
     }
 }

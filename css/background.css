@@ -13,6 +13,7 @@ body {
     overflow-x: hidden;
     overflow-y: hidden;
     background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    display: flex;
 }
 
 /* 按钮悬停时 */
@@ -121,4 +122,30 @@ button:hover {
     100% {
         transform: rotateX(-360deg);
     }
+}
+
+#load-box{
+    position: absolute;
+    width: 100%;
+    height:100%;
+    background-color: white;
+    opacity: 0.5;
+    z-index: 99;
+    display: none;
+}
+
+#load-box p{
+    position: absolute;
+    font-size: 1.5vw;
+    top:30vw;
+    left:47.5vw;
+}
+
+#load-box img{
+    position:absolute;
+    width:20vw;
+    height:20vw;
+    top:10vw;
+    left:40vw;
+    z-index: 9;
 }

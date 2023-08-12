@@ -74,7 +74,7 @@
     text-align: center;
     font-size: 1.4vw;
     height: 3vw;
-    width: 15vw;
+    width: 14vw;
     border-radius: 0.4vw;
     border: 1px solid #c8cccf;
     color: #6a6f77;
@@ -87,7 +87,7 @@
     text-align: center;
     font-size: 1.4vw;
     height: 3vw;
-    width: 10vw;
+    width: 11vw;
     border-radius: 0.4vw;
     border: 1px solid #c8cccf;
     color: #6a6f77;
@@ -136,4 +136,59 @@ input[type="text"]:focus {
     position: absolute;
     top: 3vw;
     left:4vw;
+}
+
+#historyButton{
+    position: absolute;
+    top:1vw;
+    left:4vw;
+    font-size: 1.25vw;
+    cursor:pointer;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#historyButton:hover{
+    border: 0.1vw solid black;
+}
+
+.history-box{
+    position: absolute;
+    width: 73vw;
+    height:37vw;
+    top:3vw;
+    left:4vw;
+    background-color: rgb(249, 246, 239);
+    /* border: 1px solid black; */
+    border-radius: 2vw;
+    box-shadow: 2px 2px black;
+    display: none;
+    font-size: 1.3vw;
+    color:#919397;
+    padding:0.4vw 0.8vw;
+}
+
+#history{
+    position: absolute;
+    width: 73vw;
+    height:35vw;
+    top:0vw;
+    overflow-y: scroll;
+}
+
+#history::-webkit-scrollbar{
+    width:0vw;
+}
+
+#hide{
+    position: absolute;
+    width: 73vw;
+    height:2vw;
+    top:35vw;
+    color:cornflowerblue;
+    text-align: center;
+    cursor: pointer;
+}
+
+#hide:hover{
+    color: blue;
 }
