@@ -1,4 +1,4 @@
-.mainPage{
+.mainPage {
     background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
 }
 
@@ -10,7 +10,7 @@
     width: 35vw;
     height: 37vw;
     overflow-y: scroll;
-    border-radius:1vw ;
+    border-radius: 1vw;
 }
 
 .rightbox {
@@ -21,7 +21,7 @@
     width: 35vw;
     height: 37vw;
     overflow-y: scroll;
-    border-radius:1vw ;
+    border-radius: 1vw;
 }
 
 .itemboard {
@@ -33,37 +33,37 @@
     height: 30vw;
     line-height: 4vw;
     overflow-y: scroll;
-    border-radius:1vw ;
+    border-radius: 1vw;
     box-shadow: 2px 1px 19px rgba(0, 0, 0, .1);
 }
 
-.leftbox::-webkit-scrollbar{
+.leftbox::-webkit-scrollbar {
     width: 0;
 }
 
-.rightbox::-webkit-scrollbar{
+.rightbox::-webkit-scrollbar {
     width: 0;
 }
 
-.itemboard::-webkit-scrollbar{
+.itemboard::-webkit-scrollbar {
     width: 0.5vw;
 }
 
 .itemboard::-webkit-scrollbar-thumb {
-    background: #ccc; 
-     /* 滑块颜色 */
+    background: #ccc;
+    /* 滑块颜色 */
     border-radius: 5px;
-     /* // 滑块圆角 */
+    /* // 滑块圆角 */
 }
 
 .itemboard::-webkit-scrollbar-thumb:hover {
-    background: gray; 
+    background: gray;
     /* // 鼠标移入滑块变红 */
 }
 
 .itemboard::-webkit-scrollbar-track {
     border-radius: 10px;
-     /* // 轨道圆角 */
+    /* // 轨道圆角 */
     background-color: #eee;
     /* // 轨道颜色  */
 }
@@ -107,7 +107,7 @@ input[type="text"]:focus {
     font-size: 2vw;
     border-radius: 0.4vw;
     width: 10vw;
-    height:4vw;
+    height: 4vw;
     letter-spacing: 0.8vw;
     text-align: center;
     opacity: 0.7;
@@ -122,73 +122,73 @@ input[type="text"]:focus {
     font-size: 2vw;
     border-radius: 0.4vw;
     width: 10vw;
-    height:4vw;
+    height: 4vw;
     letter-spacing: 0.8vw;
     text-align: center;
     opacity: 0.7;
     border-width: 0.5px;
 }
 
-#dateresult {
-    color:black;
+#dateResult {
+    color: black;
     text-shadow: 0.15vw 0.15vw violet;
     font-size: 2vw;
     position: absolute;
     top: 3vw;
-    left:4vw;
+    left: 4vw;
 }
 
-#historyButton{
+#historyButton {
     position: absolute;
-    top:1vw;
-    left:4vw;
+    top: 1vw;
+    left: 4vw;
     font-size: 1.25vw;
-    cursor:pointer;
+    cursor: pointer;
     font-family: 'Courier New', Courier, monospace;
 }
 
-#historyButton:hover{
+#historyButton:hover {
     border: 0.1vw solid black;
 }
 
-.history-box{
+.history-box {
     position: absolute;
     width: 73vw;
-    height:37vw;
-    top:3vw;
-    left:4vw;
+    height: 37vw;
+    top: 3vw;
+    left: 3vw;
     background-color: rgb(249, 246, 239);
     /* border: 1px solid black; */
     border-radius: 2vw;
     box-shadow: 2px 2px black;
     display: none;
     font-size: 1.3vw;
-    color:#919397;
-    padding:0.4vw 0.8vw;
+    color: #919397;
+    padding: 0.4vw 0.8vw;
 }
 
-#history{
+#history {
     position: absolute;
     width: 73vw;
-    height:35vw;
-    top:0vw;
+    height: 35vw;
+    top: 0vw;
     overflow-y: scroll;
 }
 
-#history::-webkit-scrollbar{
-    width:0vw;
+#history::-webkit-scrollbar {
+    width: 0vw;
 }
 
-#hide{
+#hide {
     position: absolute;
     width: 73vw;
-    height:2vw;
-    top:35vw;
-    color:cornflowerblue;
+    height: 2vw;
+    top: 35vw;
+    color: cornflowerblue;
     text-align: center;
     cursor: pointer;
 }
 
-#hide:hover{
+#hide:hover {
     color: blue;
 }

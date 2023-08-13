@@ -132,7 +132,7 @@ input[type="text"]:focus {
     border: 0.1vw solid #ff7496;
 }
 
-#dataresult {
+#dataResult {
     color:black;
     text-shadow: 0.15vw 0.15vw violet;
     font-size: 2vw;

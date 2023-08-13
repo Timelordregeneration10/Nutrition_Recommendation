@@ -46,7 +46,7 @@ document.getElementById("dataSubmit").onclick = function () {
     let d = new Date();
     let sdm = String(d.getMonth() + 1);
     if (sdm.length == 1) { sdm = "0" + sdm; }
-    let sdd = String(d.getDate() + 1);
+    let sdd = String(d.getDate());
     if (sdd.length == 1) { sdd = "0" + sdd; }
     let currentDate = d.getFullYear() + "-" + sdm + "-" + sdd;
     // alert(currentDate);
@@ -120,15 +120,21 @@ document.getElementById("historyButton").onclick = function () {
         //从服务器获取数据
         req.onreadystatechange = function () {
             if (req.readyState == 4) {
+                let myObject;
                 myObject = JSON.parse(req.responseText);
                 //假设服务器的响应是用 JSON 格式编写的
                 if (myObject.code % 2 == 1) {
-                    let temp = JSON.parse(myObject.data);
-                    result = "date: " + temp.date;
-                    result += "condition: " + temp.conditions;
-                    result += ", symptom: " + temp.symptoms;
-                    result += ", treatment: " + temp.treatments;
-                    result += ", recommendation: " + temp.recommendation;
+                    let num = myObject.data.length;
+                    let temp = myObject.data;
+                    let result = ``;
+                    for (let j = 0; j < num; j++) {
+                        result += `date: ` + temp[j].date;
+                        result += `, condition: ` + temp[j].conditions;
+                        result += `, symptom: ` + temp[j].symptoms;
+                        result += `, treatment: ` + temp[j].treatments;
+                        result += `, recommendation: ` + temp[j].recommendation;
+                        result += `<br><br>`;
+                    }
                     document.getElementById("load-box").style.display = "none";
                     document.getElementById("history").innerHTML = result;
                 }

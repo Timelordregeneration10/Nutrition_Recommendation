@@ -4,6 +4,10 @@ function slip() {
     document.getElementsByClassName("pre-box")[0].style = "transform: translateX(100%)";
 }
 
+function slip0() {
+    document.getElementsByClassName("pre-box")[0].style = "transform: translateX(0%)";
+}
+
 function login() {
     let inputs = document.getElementsByTagName("input");
 
@@ -106,4 +110,8 @@ function regist() {
             }
         }
     }
+}
+
+document.getElementsByClassName("back-box")[0].onclick=function(){
+    window.location.href="index.html";
 }

@@ -217,3 +217,16 @@ button:hover {
     cursor: pointer;
     border-bottom: 1px solid white;
 }
+
+.back-box{
+    position: absolute;
+    top:1vw;
+    right:1vw;
+    font-size: 1.5vw;
+    cursor:pointer;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.back-box:hover{
+    border: 0.1vw solid black;
+}
