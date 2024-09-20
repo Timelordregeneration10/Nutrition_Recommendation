@@ -64,7 +64,7 @@ document.getElementById("logOut").onclick = function () {
     window.location.href = "index.html";
 }
 
-setTimeout(checkLogin, 500);
+// setTimeout(checkLogin, 500);
 
 function checkLogin() {
     if (userSearch == "") {

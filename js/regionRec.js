@@ -5,7 +5,7 @@ document.getElementsByTagName("a")[2].href += userSearch;
 document.getElementsByTagName("a")[3].href += userSearch;
 document.getElementsByTagName("a")[4].href += userSearch;
 
-setTimeout(checkLogin, 500);
+// setTimeout(checkLogin, 500);
 
 function checkLogin() {
     if (userSearch == "") {

@@ -85,7 +85,7 @@ document.getElementById("dateSubmit").onclick = function () {
     }
 }
 
-setTimeout(checkLogin, 500);
+// setTimeout(checkLogin, 500);
 
 function checkLogin() {
     if (userSearch == "") {
