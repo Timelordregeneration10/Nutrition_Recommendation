@@ -23,3 +23,5 @@ function frame() {
     if (flag1 == 1) { pos1 -= 0.05; }
     scrollCheck.style.bottom = pos1 + "vw";
 }
+
+alert("当前为测试环境，仅作展示，未连接后端！");

@@ -37,6 +37,11 @@ document.getElementById("dateSubmit").onclick = function () {
         }
     }
 
+    document.getElementById("dateResult").innerHTML = "测试数据";
+    if (document.getElementById("dateResult").innerHTML === "测试数据") {
+      return;
+    }
+
     document.getElementById("load-box").style.display = "block";
 
     let result = "";                                                     //输出的结果

@@ -13,6 +13,8 @@ function modifySign() {
         return -1;
     }
 
+    back();
+
     document.getElementById("load-box").style.display = "block";
 
     let userSearch = location.search;

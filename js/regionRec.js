@@ -28,6 +28,11 @@ document.getElementById("regionSubmit").onclick = function () {
         return -1;
     }
 
+    document.getElementById("regionResult").innerHTML = "测试数据";
+    if (document.getElementById("regionResult").innerHTML === "测试数据") {
+      return;
+    }
+
     document.getElementById("load-box").style.display = "block";
 
     let userName;

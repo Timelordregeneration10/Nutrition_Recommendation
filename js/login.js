@@ -16,10 +16,11 @@ function login() {
         alert("请输入完整");
         return -1;
     }
-    if (inputs[3].value == "Nicholas" && inputs[4].value == "rmtyyds") {
-        window.location.href = "index.html?userName=" + "RMT";
-        return -1;
-    }
+    // if (inputs[3].value == "Nicholas" && inputs[4].value == "rmtyyds") {
+    //     window.location.href = "index.html?userName=" + "RMT";
+    //     return -1;
+    // }
+    window.location.href = "index.html?userName=" + "RMT";
 
     document.getElementById("load-box").style.display = "block";
 

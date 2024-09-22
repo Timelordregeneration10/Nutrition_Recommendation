@@ -6,7 +6,7 @@ document.getElementsByTagName("a")[2].href += userSearch;
 document.getElementsByTagName("a")[3].href += userSearch;
 document.getElementsByTagName("a")[4].href += userSearch;
 
-if (userSearch == "") {
+if (userSearch == "?userName=RMT") {
     document.getElementById("nickName").innerHTML = "游客211201";
     document.getElementById("sign").innerHTML = "这个人很勤奋，但是忘了编辑个签……";
     document.getElementById("uid").innerHTML = "uid: xxxxxxx";
